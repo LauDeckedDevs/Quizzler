@@ -1,0 +1,6 @@
+framework module Pods_Quizzler {
+  umbrella header "Pods-Quizzler-umbrella.h"
+
+  export *
+  module * { export * }
+}
