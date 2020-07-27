@@ -62,12 +62,14 @@ class ViewController: UIViewController {
             
     //MARK: - FinishedQuizzAlert
             
-            let alert = UIAlertController(title: "The End", message: "You have finished the quizz, do you want to start over?", preferredStyle: .alert)
-            let restartAction = UIAlertAction(title:"Restart", style: .default) { (UIAlertAction) in
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.7) {
+                let alert = UIAlertController(title: "The End", message: "You have finished the quizz, do you want to start over?", preferredStyle: .alert)
+                let restartAction = UIAlertAction(title:"Restart", style: .default) { (UIAlertAction) in
                 self.startOver()
+                }
+                alert.addAction(restartAction)
+                self.present(alert, animated: true, completion: nil)
             }
-            alert.addAction(restartAction)
-            present(alert, animated: true, completion: nil)
         }
     }
     
